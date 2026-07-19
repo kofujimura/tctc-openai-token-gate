@@ -9,6 +9,12 @@ updates:
         dependency-type: production
       development-dependencies:
         dependency-type: development
+    ignore:
+      # next typegen rejects TypeScript majors it does not support yet;
+      # lift this once Next.js accepts TypeScript >= 7.
+      - dependency-name: typescript
+        update-types:
+          - "version-update:semver-major"
   - package-ecosystem: github-actions
     directory: /
     schedule:
